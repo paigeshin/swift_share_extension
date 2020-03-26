@@ -41,32 +41,6 @@ class ViewController: UIViewController {
     }
     
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @IBAction func shareText(_ sender: UIButton) {
         
         //보내줄 텍스트

@@ -26,8 +26,7 @@ class ShareViewController: SLComposeServiceViewController {
         if let currentMessage = contentText {
             let currentMessageLength = currentMessage.count
             charactersRemaining = (maxCharacterCount - currentMessageLength) as NSNumber
-    
-            if Int(charactersRemaining) < 0 {
+            if Int(truncating: charactersRemaining) < 0 {
                 showMessage(title: "Sorry", message: "Enter only 100 characters", VC: self)
                 return false
             }
@@ -38,7 +37,6 @@ class ShareViewController: SLComposeServiceViewController {
     }
 
     override func didSelectPost() {
-       
         dataAttachment()
     }
     
@@ -46,7 +44,7 @@ class ShareViewController: SLComposeServiceViewController {
         let content = extensionContext!.inputItems[0] as! NSExtensionItem
         let contentType = kUTTypeImage as String
         
-        for attachment in content.attachments as! [NSItemProvider] {
+        for attachment in content.attachments! {
             if attachment.hasItemConformingToTypeIdentifier(contentType) {
                 attachment.loadItem(forTypeIdentifier: contentType, options: nil) { (data, error) in
                     if error == nil {
@@ -55,7 +53,7 @@ class ShareViewController: SLComposeServiceViewController {
                             self.saveDataToUserDefault(suiteName: self.sharedIdentifier, dataKey: "Image", dataValue: imageData)
                         }
                     } else {
-                        self.showMessage(title: "Sorry", message: "Coud not load the image", VC: self)
+                        self.showMessage(title: "Sorry", message: "Could not load the image", VC: self)
                     }
                 }
             }
@@ -63,9 +61,8 @@ class ShareViewController: SLComposeServiceViewController {
         }
         
     }
-    
 
-    //해석이 안됨..
+    //Config File임. Additional Option을 추가할 수 있다.
     lazy var UserConfigurationItem: SLComposeSheetConfigurationItem = {
         let item = SLComposeSheetConfigurationItem()
         item?.title = "What's on your mind?"
