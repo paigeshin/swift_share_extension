@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="share_functionality_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jWS-1D-i9Q">
+                                <rect key="frame" x="87" y="106" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Uhj-Xa-2WO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0R-Uy-oFr">
+                                <rect key="frame" x="174" y="572" width="82" height="30"/>
+                                <state key="normal" title="ShareImage"/>
+                                <connections>
+                                    <action selector="shareImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="apJ-zH-r7E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MS-w6-oby">
+                                <rect key="frame" x="174" y="461" width="67" height="30"/>
+                                <state key="normal" title="ShareText"/>
+                                <connections>
+                                    <action selector="shareText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWk-ty-588"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Ru-gJf">
+                                <rect key="frame" x="87" y="268" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0MS-w6-oby" firstAttribute="leading" secondItem="a0R-Uy-oFr" secondAttribute="leading" id="Aup-hU-deB"/>
+                            <constraint firstItem="jWS-1D-i9Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ifm-1G-U92"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a0R-Uy-oFr" secondAttribute="bottom" constant="260" id="J0q-fS-NKZ"/>
+                            <constraint firstItem="jWS-1D-i9Q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="OPG-o8-x9f"/>
+                            <constraint firstItem="0MS-w6-oby" firstAttribute="top" secondItem="Vbv-Ru-gJf" secondAttribute="bottom" constant="65" id="P27-eJ-8xL"/>
+                            <constraint firstItem="jWS-1D-i9Q" firstAttribute="leading" secondItem="Vbv-Ru-gJf" secondAttribute="leading" id="T4V-Iy-Nrh"/>
+                            <constraint firstItem="Vbv-Ru-gJf" firstAttribute="centerX" secondItem="0MS-w6-oby" secondAttribute="centerX" id="Xap-wN-vQQ"/>
+                            <constraint firstItem="jWS-1D-i9Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="f5w-me-Pn6"/>
+                            <constraint firstItem="Vbv-Ru-gJf" firstAttribute="top" secondItem="jWS-1D-i9Q" secondAttribute="bottom" constant="34" id="oy4-ht-MI6"/>
+                            <constraint firstItem="0MS-w6-oby" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="p31-Tm-Qc2"/>
+                            <constraint firstItem="jWS-1D-i9Q" firstAttribute="trailing" secondItem="Vbv-Ru-gJf" secondAttribute="trailing" id="prg-fC-f92"/>
+                            <constraint firstItem="a0R-Uy-oFr" firstAttribute="top" secondItem="0MS-w6-oby" secondAttribute="bottom" constant="81" id="qNC-iw-MdO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentHeight" destination="Uhj-Xa-2WO" id="N2d-s7-PpK"/>
+                        <outlet property="imageView" destination="jWS-1D-i9Q" id="RDw-Dh-E7U"/>
+                        <outlet property="txtViewContent" destination="Vbv-Ru-gJf" id="Q0r-N2-iQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="139"/>
+        </scene>
+    </scenes>
+</document>
